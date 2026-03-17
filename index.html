@@ -319,6 +319,44 @@
             z-index: 1;
         }
 
+        .explore-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .explore-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .explore-card:hover {
+            border-color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .explore-emoji {
+            font-size: 2.5em;
+            display: block;
+        }
+
+        .explore-name {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
         @media (max-width: 600px) {
             .header h1 {
                 font-size: 2em;
@@ -384,16 +422,16 @@
             </div>
 
             <div class="section">
-                <div class="section-title">Wings of Fire</div>
-                <div class="wings-of-fire-section">
-                    <p>I'm an avid fan of the Wings of Fire series. The intricate world-building, compelling characters, and epic dragon adventures captivate me. Whether it's following Seawing intrigue, Sandwing politics, or Skywing drama, I love immersing myself in Pyrrhia's complex ecosystems and conflicts. The series combines fantasy, strategy, and emotional depth that keeps me coming back for more.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-title">Pickleball</div>
-                <div class="pickleball-section">
-                    <p>Beyond the screen, I'm passionate about pickleball. The fast-paced rallies, strategic placement, and competitive spirit of the game keep me engaged. Whether playing casually with friends or pushing for competitive play, pickleball offers the perfect balance of athleticism, strategy, and fun. It's my way of staying active and connecting with others who share the passion for this rapidly growing sport.</p>
+                <div class="section-title">Explore More</div>
+                <div class="explore-grid">
+                    <a href="wings-of-fire.html" class="explore-card">
+                        <span class="explore-emoji">🐉</span>
+                        <div class="explore-name">Wings of Fire</div>
+                    </a>
+                    <a href="pickleball.html" class="explore-card">
+                        <span class="explore-emoji">🏓</span>
+                        <div class="explore-name">Pickleball</div>
+                    </a>
                 </div>
             </div>
         </div>

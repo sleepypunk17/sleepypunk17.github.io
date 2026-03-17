@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickleball - Kevin Nguyen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 50%, #ffd700 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 50%, #ffd700 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(135deg, #00b4db 0%, #ffd700 100%);
+            border-radius: 2px;
+        }
+
+        .pickleball-content {
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 50%, #ffd700 100%);
+            color: #333;
+            padding: 30px;
+            border-radius: 12px;
+            border: 3px solid #ffd700;
+            line-height: 1.8;
+        }
+
+        .skills-section {
+            margin-top: 40px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 12px;
+            border-bottom: 4px solid #ffd700;
+            color: #333;
+        }
+
+        .skill-card h3 {
+            color: #00b4db;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .skill-card p {
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .tips-section {
+            margin-top: 40px;
+        }
+
+        .tips-list {
+            background: #fff9c4;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .tips-list ul {
+            margin-left: 20px;
+            color: #333;
+        }
+
+        .tips-list li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background: #f0f2f5;
+            padding: 30px 40px;
+            text-align: center;
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .header {
+                padding: 40px 30px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Pickleball 🏓</h1>
+            <p>The Sport I Love</p>
+        </div>
+
+        <div class="content">
+            <a href="index.html" class="back-link">← Back to Home</a>
+
+            <div class="section">
+                <div class="section-title">My Passion for Pickleball</div>
+                <div class="pickleball-content">
+                    <p>Beyond the screen, I'm passionate about pickleball. The fast-paced rallies, strategic placement, and competitive spirit of the game keep me engaged. Whether playing casually with friends or pushing for competitive play, pickleball offers the perfect balance of athleticism, strategy, and fun. It's my way of staying active and connecting with others who share the passion for this rapidly growing sport.</p>
+                </div>
+            </div>
+
+            <div class="section skills-section">
+                <div class="section-title">Key Skills</div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>🎯 Placement</h3>
+                        <p>Strategic shot placement to control the court and force errors from opponents.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>⚡ Speed</h3>
+                        <p>Quick court movement and fast reflexes for aggressive play.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>🛡️ Defense</h3>
+                        <p>Solid defensive strategies and court positioning to neutralize attacks.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>🔥 Serve</h3>
+                        <p>Consistent, powerful serves to gain the advantage at the start of rallies.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section tips-section">
+                <div class="section-title">Why I Love Pickleball</div>
+                <div class="tips-list">
+                    <ul>
+                        <li><strong>Lower impact:</strong> Easier on joints compared to tennis while still highly competitive</li>
+                        <li><strong>Community:</strong> Welcoming and friendly player community at all skill levels</li>
+                        <li><strong>Quick learning curve:</strong> Fun to learn but has incredible depth for competitive play</li>
+                        <li><strong>Social:</strong> Perfect doubles game for team play and building friendships</li>
+                        <li><strong>Accessibility:</strong> Smaller court makes it fun and less intimidating for beginners</li>
+                        <li><strong>Growing sport:</strong> One of the fastest-growing sports with tournaments worldwide</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Kevin Nguyen. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
