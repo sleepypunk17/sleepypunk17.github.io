@@ -102,6 +102,102 @@
             transform: translateY(-3px);
         }
 
+        /* Python Card */
+        .interest-card:nth-child(1) {
+            background: linear-gradient(135deg, #306998 0%, #ffd43b 100%);
+            color: white;
+            border: 2px solid #306998;
+        }
+
+        .interest-card:nth-child(1) .interest-name {
+            color: white;
+        }
+
+        .interest-card:nth-child(1):hover {
+            border-color: #ffd43b;
+            box-shadow: 0 5px 15px rgba(48, 105, 152, 0.3);
+        }
+
+        /* Mathematics Card */
+        .interest-card:nth-child(2) {
+            background: linear-gradient(135deg, #8b00ff 0%, #ff6ec4 100%);
+            color: white;
+            border: 2px solid #8b00ff;
+        }
+
+        .interest-card:nth-child(2) .interest-name {
+            color: white;
+        }
+
+        .interest-card:nth-child(2):hover {
+            border-color: #ff6ec4;
+            box-shadow: 0 5px 15px rgba(139, 0, 255, 0.3);
+        }
+
+        /* Video Games Card */
+        .interest-card:nth-child(3) {
+            background: linear-gradient(135deg, #1a1a2e 0%, #ff006e 100%);
+            color: white;
+            border: 2px solid #ff006e;
+        }
+
+        .interest-card:nth-child(3) .interest-name {
+            color: white;
+        }
+
+        .interest-card:nth-child(3):hover {
+            border-color: #ff006e;
+            box-shadow: 0 5px 15px rgba(255, 0, 110, 0.3);
+        }
+
+        /* Pickleball Card */
+        .interest-card:nth-child(4) {
+            background: linear-gradient(135deg, #00b4db 0%, #ffd700 100%);
+            color: #333;
+            border: 2px solid #ffd700;
+        }
+
+        .interest-card:nth-child(4) .interest-name {
+            color: #333;
+        }
+
+        .interest-card:nth-child(4):hover {
+            border-color: #00b4db;
+            box-shadow: 0 5px 15px rgba(0, 180, 219, 0.3);
+        }
+
+        /* Manga & Comics Card */
+        .interest-card:nth-child(5) {
+            background: linear-gradient(135deg, #ff1744 0%, #ffc400 100%);
+            color: white;
+            border: 2px solid #ff1744;
+        }
+
+        .interest-card:nth-child(5) .interest-name {
+            color: white;
+        }
+
+        .interest-card:nth-child(5):hover {
+            border-color: #ffc400;
+            box-shadow: 0 5px 15px rgba(255, 23, 68, 0.3);
+        }
+
+        /* Creativity Card */
+        .interest-card:nth-child(6) {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: 2px solid #667eea;
+        }
+
+        .interest-card:nth-child(6) .interest-name {
+            color: white;
+        }
+
+        .interest-card:nth-child(6):hover {
+            border-color: #764ba2;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
         .interest-emoji {
             font-size: 2.5em;
             margin-bottom: 10px;
@@ -151,6 +247,76 @@
         .links-section a:hover {
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
             transform: translateY(-2px);
+        }
+
+        .wings-of-fire-section {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #d4145a 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 8px solid #ff1744;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wings-of-fire-section::before {
+            content: '🐉';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 4em;
+            opacity: 0.1;
+        }
+
+        .wings-of-fire-section::after {
+            content: '🐉';
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            font-size: 4em;
+            opacity: 0.1;
+        }
+
+        .wings-of-fire-section p {
+            line-height: 1.6;
+            font-size: 1em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pickleball-section {
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 50%, #ffd700 100%);
+            color: #333;
+            padding: 25px;
+            border-radius: 12px;
+            border: 3px solid #ffd700;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pickleball-section::before {
+            content: '🏓';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 4em;
+            opacity: 0.15;
+        }
+
+        .pickleball-section::after {
+            content: '🏓';
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            font-size: 4em;
+            opacity: 0.15;
+        }
+
+        .pickleball-section p {
+            line-height: 1.6;
+            font-size: 1em;
+            position: relative;
+            z-index: 1;
         }
 
         @media (max-width: 600px) {
@@ -219,15 +385,15 @@
 
             <div class="section">
                 <div class="section-title">Wings of Fire</div>
-                <div class="bio">
-                    I'm an avid fan of the Wings of Fire series. The intricate world-building, compelling characters, and epic dragon adventures captivate me. Whether it's following Seawing intrigue, Sandwing politics, or Skywing drama, I love immersing myself in Pyrrhia's complex ecosystems and conflicts. The series combines fantasy, strategy, and emotional depth that keeps me coming back for more.
+                <div class="wings-of-fire-section">
+                    <p>I'm an avid fan of the Wings of Fire series. The intricate world-building, compelling characters, and epic dragon adventures captivate me. Whether it's following Seawing intrigue, Sandwing politics, or Skywing drama, I love immersing myself in Pyrrhia's complex ecosystems and conflicts. The series combines fantasy, strategy, and emotional depth that keeps me coming back for more.</p>
                 </div>
             </div>
 
             <div class="section">
                 <div class="section-title">Pickleball</div>
-                <div class="bio">
-                    Beyond the screen, I'm passionate about pickleball. The fast-paced rallies, strategic placement, and competitive spirit of the game keep me engaged. Whether playing casually with friends or pushing for competitive play, pickleball offers the perfect balance of athleticism, strategy, and fun. It's my way of staying active and connecting with others who share the passion for this rapidly growing sport.
+                <div class="pickleball-section">
+                    <p>Beyond the screen, I'm passionate about pickleball. The fast-paced rallies, strategic placement, and competitive spirit of the game keep me engaged. Whether playing casually with friends or pushing for competitive play, pickleball offers the perfect balance of athleticism, strategy, and fun. It's my way of staying active and connecting with others who share the passion for this rapidly growing sport.</p>
                 </div>
             </div>
         </div>
