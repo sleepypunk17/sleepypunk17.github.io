@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wings of Fire - Kevin Nguyen</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>⭐</text></svg>">
     <style>
         * {
             margin: 0;
@@ -343,6 +344,21 @@
             transform: translateY(-2px);
         }
 
+        .star-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+
         @media (max-width: 600px) {
             .header h1 {
                 font-size: 2em;
@@ -365,6 +381,7 @@
 <body>
     <div class="container">
         <div class="header">
+            <div class="star-icon">⭐</div>
             <h1>Wings of Fire 🐉</h1>
             <p>Pyrrhia's Epic Dragon Adventures</p>
         </div>
