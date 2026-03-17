@@ -131,6 +131,28 @@
             font-size: 0.9em;
         }
 
+        .links-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .links-section a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .links-section a:hover {
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 600px) {
             .header h1 {
                 font-size: 2em;
@@ -197,6 +219,9 @@
         </div>
 
         <div class="footer">
+            <div class="links-section">
+                <a href="https://bloxd.io" target="_blank">Play Bloxd.io</a>
+            </div>
             <p>&copy; 2026 Kevin Nguyen. All rights reserved.</p>
         </div>
     </div>
