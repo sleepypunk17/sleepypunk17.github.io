@@ -26,7 +26,7 @@
             <div class="section">
                 <div class="section-title">About Me</div>
                 <div class="bio">
-                    Hi! I'm Kevin Nguyen, a passionate developer and enthusiast. I love diving into Python and mathematics, playing competitive games like Bloxd.io and Geometry Dash, and dominating the pickleball court. When I'm not coding or gaming, I'm lost in the worlds of manga—especially Doraemon and Wings of Fire. I believe in balancing technical pursuits with creative and athletic interests.
+                    Hi! I'm Kevin Nguyen, a passionate developer and enthusiast. I love diving into Python and mathematics, playing competitive games like Bloxd.io and Geometry Dash, dominating the pickleball court, and diving into space. When I'm not coding or gaming, I'm lost in the worlds of manga—especially Doraemon and Wings of Fire. I believe in balancing technical pursuits with creative and athletic interests.
                 </div>
             </div>
 
@@ -57,6 +57,10 @@
                         <span class="interest-emoji">✨</span>
                         <div class="interest-name">Creativity</div>
                     </div>
+                    <div class="interest-card">
+                        <span class="interest-emoji">🌌</span>
+                        <div class="interest-name">Space</div>
+                    </div>
                 </div>
             </div>
 
@@ -70,6 +74,10 @@
                     <a href="pickleball.html" class="explore-card">
                         <span class="explore-emoji">🏓</span>
                         <div class="explore-name">Pickleball</div>
+                    </a>
+                    <a href="space.html" class="explore-card">
+                        <span class="explore-emoji">🌌</span>
+                        <div class="explore-name">Space</div>
                     </a>
                 </div>
             </div>
@@ -98,8 +106,10 @@
             pickleballName: "Pickleball",
             mangaName: "Manga & Comics",
             creativityName: "Creativity",
+            spaceName: "Space",
             wingsName: "Wings of Fire",
             pickleballLink: "Pickleball",
+            spaceLink: "Space",
             playBloxd: "Play Bloxd.io",
             copyright: "© 2026 Kevin Nguyen. All rights reserved."
         },
@@ -116,8 +126,10 @@
             pickleballName: "Pickleball",
             mangaName: "Manga & Truyện Tranh",
             creativityName: "Sáng Tạo",
+            spaceName: "Vũ Trụ",
             wingsName: "Đôi cánh lửa",
             pickleballLink: "Pickleball",
+            spaceLink: "Vũ Trụ",
             playBloxd: "Chơi Bloxd.io",
             copyright: "© 2026 Kevin Nguyễn. Bảo lưu mọi quyền."
         }
@@ -166,11 +178,13 @@
         interestNames[3].textContent = t.pickleballName;
         interestNames[4].textContent = t.mangaName;
         interestNames[5].textContent = t.creativityName;
+        interestNames[6].textContent = t.spaceName;
         
         // Update explore cards
         const exploreNames = document.querySelectorAll('.explore-name');
         exploreNames[0].textContent = t.wingsName;
         exploreNames[1].textContent = t.pickleballLink;
+        exploreNames[2].textContent = t.spaceLink;
         
         // Update button and copyright
         document.querySelector('.links-section a').textContent = t.playBloxd;

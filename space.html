@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space - Kevin Nguyen</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>⭐</text></svg>">
+    <link rel="stylesheet" href="space.css">
+</head>
+<body>
+    <div class="language-switcher">
+        <div class="lever" id="languageLever">
+            <div class="lever-toggle">EN</div>
+            <span class="lever-label en">EN</span>
+            <span class="lever-label vi">VI</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Space 🌌</h1>
+            <p>The Cosmic Wonder</p>
+        </div>
+
+        <div class="content">
+            <a href="index.html" class="back-link">← Back to Home</a>
+
+            <div class="section">
+                <div class="section-title">My Passion for Space</div>
+                <div class="space-content">
+                    <p>Space has always captivated my imagination. The vast cosmos, with its infinite possibilities and mysteries, represents the ultimate frontier of human knowledge and exploration. From the majesty of distant galaxies to the physics of black holes, space exploration combines science, mathematics, and adventure in ways that fuel my curiosity and drive to understand the universe we inhabit.</p>
+                </div>
+            </div>
+
+            <div class="section topics-section">
+                <div class="section-title">Topics of Interest</div>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <h3>🪐 Planets & Moons</h3>
+                        <p>Exploring the diverse worlds in our solar system and beyond, from rocky planets to gas giants and their fascinating moons.</p>
+                    </div>
+                    <div class="topic-card">
+                        <h3>🌟 Stars & Galaxies</h3>
+                        <p>Understanding stellar evolution, galaxy formation, and the cosmic structure that defines our universe.</p>
+                    </div>
+                    <div class="topic-card">
+                        <h3>🚀 Space Exploration</h3>
+                        <p>The achievements of space agencies, missions to explore other worlds, and the future of human spaceflight.</p>
+                    </div>
+                    <div class="topic-card">
+                        <h3>⚫ Black Holes & Physics</h3>
+                        <p>Diving into the mysteries of mysterious black holes, relativity, and the fundamental physics that governs the cosmos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section reasons-section">
+                <div class="section-title">Why Space Fascinates Me</div>
+                <div class="reasons-list">
+                    <ul>
+                        <li><strong>Infinite worlds:</strong> Expands over 266,000 kilometers per hour.</li>
+                        <li><strong>Scientific frontier:</strong> Space exploration drives innovation and scientific advancement</li>
+                        <li><strong>Perspective:</strong> Studying space gives us perspective on our place in the universe</li>
+                        <li><strong>Mathematics:</strong> Space science is deeply connected to mathematics, combining both passions</li>
+                        <li><strong>Human achievement:</strong> Space exploration showcases humanity's greatest collaborative achievements</li>
+                        <li><strong>Future possibilities:</strong> Space holds the key to humanity's long-term survival in case of global catastrophes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Kevin Nguyen. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+<script>
+    const translations = {
+        en: {
+            title: "Space 🌌",
+            subtitle: "The Cosmic Wonder",
+            backLink: "← Back to Home",
+            passionTitle: "My Passion for Space",
+            passionText: "Space has always captivated my imagination. The vast cosmos, with its infinite possibilities and mysteries, represents the ultimate frontier of human knowledge and exploration. From the majesty of distant galaxies to the physics of black holes, space exploration combines science, mathematics, and adventure in ways that fuel my curiosity and drive to understand the universe we inhabit.",
+            topicsTitle: "Topics of Interest",
+            planetsTitle: "🪐 Planets & Moons",
+            planetsText: "Exploring the diverse worlds in our solar system and beyond, from rocky planets to gas giants and their fascinating moons.",
+            starsTitle: "🌟 Stars & Galaxies",
+            starsText: "Understanding stellar evolution, galaxy formation, and the cosmic structure that defines our universe.",
+            explorationTitle: "🚀 Space Exploration",
+            explorationText: "The achievements of space agencies, missions to explore other worlds, and the future of human spaceflight.",
+            physicsTitle: "⚫ Black Holes & Physics",
+            physicsText: "Diving into the mysteries of black holes, relativity, and the fundamental physics that governs the cosmos.",
+            whyTitle: "Why Space Fascinates Me",
+            whyItems: [
+                "<strong>Ultimate mystery:</strong> Despite our knowledge, space holds countless unexplored secrets",
+                "<strong>Scientific frontier:</strong> Space exploration drives innovation and scientific advancement",
+                "<strong>Perspective:</strong> Studying space gives us perspective on our place in the universe",
+                "<strong>Mathematics:</strong> Space science is deeply connected to mathematics, combining both passions",
+                "<strong>Human achievement:</strong> Space exploration showcases humanity's greatest collaborative achievements",
+                "<strong>Future possibilities:</strong> Space holds the key to humanity's long-term survival and growth"
+            ],
+            copyright: "© 2026 Kevin Nguyen. All rights reserved."
+        },
+        vi: {
+            title: "Vũ Trụ 🌌",
+            subtitle: "Kỳ Quan Vũ Trụ",
+            backLink: "← Quay lại Trang Chủ",
+            passionTitle: "Niềm Đam Mê Của Tôi Về Vũ Trụ",
+            passionText: "Vũ trụ luôn thu hút trí tưởng tượng của tôi. Vũ trụ rộng lớn, với những khả năng vô hạn và những bí ẩn, đại diện cho biên giới cuối cùng của kiến thức và khám phá con người. Từ vẻ hùng vĩ của các thiên hà xa xôi đến vật lý của các lỗ đen, khám phá vũ trụ kết hợp khoa học, toán học và cuộc phiêu lưu theo những cách giúp tô đốc và thúc đẩy việc tôi muốn hiểu rõ vũ trụ mà chúng ta cư ngụ.",
+            topicsTitle: "Chủ Đề Quan Tâm",
+            planetsTitle: "🪐 Hành Tinh & Vệ Tinh",
+            planetsText: "Khám phá những thế giới đa dạng trong hệ mặt trời của chúng ta và ngoài, từ các hành tinh đá đến các hành tinh khí và các vệ tinh hấp dẫn của chúng.",
+            starsTitle: "🌟 Sao & Thiên Hà",
+            starsText: "Hiểu quá trình tiến hóa sao, hình thành thiên hà, và cấu trúc vũ trụ định nghĩa vũ trụ của chúng ta.",
+            explorationTitle: "🚀 Khám Phá Vũ Trụ",
+            explorationText: "Những thành tựu của các cơ quan vũ trụ, các sứ mệnh để khám phá những thế giới khác, và tương lai của chuyến bay con người vào vũ trụ.",
+            physicsTitle: "⚫ Lỗ Đen & Vật Lý",
+            physicsText: "Đi sâu vào những bí ẩn của lỗ đen, tính tương đối tính, và vật lý cơ bản chi phối vũ trụ.",
+            whyTitle: "Tại Sao Vũ Trụ Quyến Rũ Tôi",
+            whyItems: [
+                "<strong>Vô vàn thế giới:</strong> Mở rộng với tốc độ hơn 266.000 km/giờ.",
+                "<strong>Biên giới khoa học:</strong> Khám phá vũ trụ thúc đẩy đổi mới và tiến bộ khoa học",
+                "<strong>Góc nhìn:</strong> Nghiên cứu vũ trụ cho chúng ta cái nhìn về vị trí của chúng ta trong vũ trụ",
+                "<strong>Toán học:</strong> Khoa học vũ trụ liên kết sâu với toán học, kết hợp cả hai niềm đam mê",
+                "<strong>Thành tựu của con người:</strong> Khám phá vũ trụ thể hiện những thành tựu hợp tác tuyệt vời nhất của nhân loại",
+                "<strong>Khả năng tương lai:</strong> Không gian nắm giữ chìa khóa cho sự sinh tồn lâu dài của nhân loại trong trường hợp xảy ra các thảm họa toàn cầu."
+            ],
+            copyright: "© 2026 Kevin Nguyễn. Bảo lưu mọi quyền."
+        }
+    };
+
+    let currentLang = 'en';
+    const lever = document.getElementById('languageLever');
+
+    lever.addEventListener('click', function() {
+        currentLang = currentLang === 'en' ? 'vi' : 'en';
+        lever.classList.toggle('vietnamese');
+        updateLanguage();
+    });
+
+    function updateLanguage() {
+        const t = translations[currentLang];
+        
+        // Update header
+        document.querySelector('.header h1').textContent = t.title;
+        document.querySelector('.header p').textContent = t.subtitle;
+        
+        // Update back link
+        document.querySelector('.back-link').textContent = t.backLink;
+        
+        // Update section titles
+        const sectionTitles = document.querySelectorAll('.section-title');
+        sectionTitles.forEach((title) => {
+            const titleText = title.textContent.trim();
+            if (titleText.includes('Passion') || titleText.includes('Niềm')) {
+                title.textContent = t.passionTitle;
+            } else if (titleText.includes('Topics') || titleText.includes('Chủ Đề')) {
+                title.textContent = t.topicsTitle;
+            } else if (titleText.includes('Why') || titleText.includes('Tại Sao')) {
+                title.textContent = t.whyTitle;
+            }
+        });
+        
+        // Update passion text
+        document.querySelector('.space-content p').textContent = t.passionText;
+        
+        // Update topic cards
+        const topicCards = document.querySelectorAll('.topic-card');
+        topicCards[0].querySelector('h3').textContent = t.planetsTitle;
+        topicCards[0].querySelector('p').textContent = t.planetsText;
+        topicCards[1].querySelector('h3').textContent = t.starsTitle;
+        topicCards[1].querySelector('p').textContent = t.starsText;
+        topicCards[2].querySelector('h3').textContent = t.explorationTitle;
+        topicCards[2].querySelector('p').textContent = t.explorationText;
+        topicCards[3].querySelector('h3').textContent = t.physicsTitle;
+        topicCards[3].querySelector('p').textContent = t.physicsText;
+        
+        // Update reasons list
+        const reasonsItems = document.querySelectorAll('.reasons-list li');
+        reasonsItems.forEach((item, index) => {
+            item.innerHTML = t.whyItems[index];
+        });
+        
+        // Update copyright
+        document.querySelector('.footer p').innerHTML = t.copyright;
+    }
+</script>
+</html>
