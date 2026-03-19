@@ -344,6 +344,69 @@
             transform: translateY(-2px);
         }
 
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .lever {
+            width: 70px;
+            height: 40px;
+            background: linear-gradient(135deg, #ff6b35 0%, #d4145a 100%);
+            border-radius: 20px;
+            position: relative;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .lever:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .lever-toggle {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 32px;
+            height: 32px;
+            background: white;
+            border-radius: 50%;
+            transition: left 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #d4145a;
+        }
+
+        .lever.vietnamese .lever-toggle {
+            left: 36px;
+        }
+
+        .lever-label {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 11px;
+            font-weight: bold;
+            color: white;
+            width: 100%;
+            text-align: center;
+        }
+
+        .lever-label.en {
+            left: 8px;
+        }
+
+        .lever-label.vi {
+            right: 8px;
+        }
+
         .star-icon {
             font-size: 4em;
             margin-bottom: 15px;
@@ -379,6 +442,13 @@
     </style>
 </head>
 <body>
+    <div class="language-switcher">
+        <div class="lever" id="languageLever">
+            <div class="lever-toggle">EN</div>
+            <span class="lever-label en">EN</span>
+            <span class="lever-label vi">VI</span>
+        </div>
+    </div>
     <div class="container">
         <div class="header">
             <h1>Wings of Fire 🐉</h1>
@@ -444,7 +514,7 @@
                     </div>
                     <div class="dragon-card">
                         <h3>⚔️ Sharpwings</h3>
-                        <p>Dragons that were enchanted 3000 years ago to guard an island.</p>
+                        <p>Dragons that were enchanted 3000 years ago to guard an cursed island.</p>
                     </div>
                     <div class="dragon-card">
                         <h3>🐝 Hivewings</h3>
@@ -459,4 +529,140 @@
         </div>
     </div>
 </body>
+<script>
+    const translations = {
+        en: {
+            title: "Wings of Fire 🐉",
+            subtitle: "Pyrrhia, Pantala's, and the Court of Refuge's's Epic Dragon Adventures",
+            backLink: "← Back to Home",
+            passionTitle: "My Passion",
+            passionText: "I'm an avid fan of the Wings of Fire series. The intricate world-building, compelling characters, and epic dragon adventures captivate me. Whether it's following Seawing intrigue, Sandwing politics, or Skywing drama, I love immersing myself in Pyrrhia's complex ecosystems and conflicts. The series combines fantasy, strategy, and emotional depth that keeps me coming back for more.",
+            tribesTitle: "Dragon Tribes I Love",
+            seawings: "🌊 Seawings",
+            seawingsText: "Mysterious underwater dragons with intricate political systems and hidden secrets beneath the waves.",
+            skywings: "🔥 Skywings",
+            skywingsText: "Proud aerial warriors with their rigid hierarchy and dramatic mountain citadels.",
+            sandwings: "🏜️ Sandwings",
+            sandwingsText: "Desert-dwelling dragons torn by political conflict and ancient prophecies.",
+            rainwings: "🌲 Rainwings",
+            rainwingsText: "Colorful rainforest dragons with amazing camouflage and unique culture.",
+            icewings: "❄️ Icewings",
+            icewingsText: "Cold and strategic dragons from the frozen lands with deep family bonds.",
+            nightwings: "🌙 Nightwings",
+            nightwingsText: "Mysterious and powerful dragons with extraordinary abilities and secrets.",
+            mudwings: "🌱 Mudwings",
+            mudwingsText: "Sturdy mud-dwelling dragons with strong family loyalty and tknown for their strengh & defense.",
+            leafwings: "🍃 Leafwings",
+            leafwingsText: "Forest dragons with plant-based abilities and a tragic history of survival and rebirth.",
+            beetlewings: "🐞 Beetlewings",
+            beetlewingsText: "Armored insect-like dragons with shimmering exoskeletons and hive-like communities.",
+            silkwings: "🪡 Silkwings",
+            silkwingsText: "Gentle silk-producing dragons known for their artistic talents and graceful wings.",
+            wildwings: "💨 Wildwings",
+            wildwingsText: "Dragons that mixed with so many tribes that they don't look like any one tribe anymore",
+            sharptails: "⚔️ Sharpwings",
+            sharptailsText: "Dragons that were enchanted 3000 years ago to guard a cursed island.",
+            hivewings: "🐝 Hivewings",
+            hivewingsText: "Hive-organized dragons with collective intelligence and powerful tribal connections.",
+            copyright: "© 2026 Kevin Nguyen. All rights reserved."
+        },
+        vi: {
+            title: "Wings of Fire 🐉",
+            subtitle: "Những Cuộc Phiêu Lưu Kỳ Tích Của Rồng Ở Pyrrhia",
+            backLink: "← Quay Lại Trang Chủ",
+            passionTitle: "Niềm Đam Mê Của Tôi",
+            passionText: "Tôi là một fan cuồng nhiệt của loạt Wings of Fire. Thế giới được xây dựng phức tạp, những nhân vật hấp dẫn, và những cuộc phiêu lưu kỳ tích của rồng làm tôi mê mẩn. Dù theo dõi những âm mưu của Seawing, chính trị của Sandwing, hay những bi kịch của Skywing, tôi yêu thích việc đắm chìm vào những hệ sinh thái phức tạp và xung đột của Pyrrhia. Loạt truyện này kết hợp giả tưởng, chiến lược, và sâu sắc cảm xúc khiến tôi luôn quay lại.",
+            tribesTitle: "Các Bộ Lạc Rồng Tôi Yêu Thích",
+            seawings: "🌊 Seawings",
+            seawingsText: "Rồng dưới nước bí ẩn với các hệ thống chính trị phức tạp và những bí mật ẩn giấu dưới sóng.",
+            skywings: "🔥 Skywings",
+            skywingsText: "Những chiến binh trên không tự hào với hệ thống phân cấp nghiêm ngặt và những pháo đài núi kỳ diệu.",
+            sandwings: "🏜️ Sandwings",
+            sandwingsText: "Rồng sống trong sa mạc bị chia rẽ bởi xung đột chính trị và những tiên tri cổ xưa.",
+            rainwings: "🌲 Rainwings",
+            rainwingsText: "Rồng rừng mưa sặc sỡ với khả năng ngụy trang tuyệt vời và nền văn hóa độc đáo.",
+            icewings: "❄️ Icewings",
+            icewingsText: "Rồng lạnh lùng và chiến lược từ những vùng đất đóng băng với những mối liên hệ gia đình sâu sắc.",
+            nightwings: "🌙 Nightwings",
+            nightwingsText: "Rồng bí ẩn và mạnh mẽ với những khả năng phi thường và những bí mật.",
+            mudwings: "🌱 Mudwings",
+            mudwingsText: "Con Rồng cư ngụ trong bùn lầy vốn kiên định, mạnh mẽ, sở hữu lòng trung thành mãnh liệt với gia đình cùng khả năng giao tiếp bằng tâm linh.",
+            leafwings: "🍃 Leafwings",
+            leafwingsText: "Rồng rừng với khả năng dựa trên thực vật và lịch sử bi thương của sự sống sót và tái sinh.",
+            beetlewings: "🐞 Beetlewings",
+            beetlewingsText: "Rồng như bọ với vỏ ngoài lấp lánh và các cộng đồng giống như tổ ong.",
+            silkwings: "🪡 Silkwings",
+            silkwingsText: "Rồng hiền lành sản xuất lụa được biết đến với tài năng nghệ thuật và cánh thanh thoát.",
+            wildwings: "💨 Wildwings",
+            wildwingsText: "Những con rồng đã pha trộn với quá nhiều bộ tộc, đến mức chúng không còn mang dáng vẻ của bất kỳ bộ tộc nào nữa.",
+            sharptails: "⚔️ Sharpwings",
+            sharptailsText: "Những con rồng bị yểm bùa từ 3.000 năm trước để canh giữ một hòn đảo bị nguyền rủa.",
+            hivewings: "🐝 Hivewings",
+            hivewingsText: "Rồng tổ chức theo tổ ong với trí thông minh tập thể và những kết nối bộ lạc mạnh mẽ.",
+            copyright: "© 2026 Kevin Nguyễn. Bảo lưu mọi quyền."
+        }
+    };
+
+    let currentLang = 'en';
+    const lever = document.getElementById('languageLever');
+
+    lever.addEventListener('click', function() {
+        currentLang = currentLang === 'en' ? 'vi' : 'en';
+        lever.classList.toggle('vietnamese');
+        updateLanguage();
+    });
+
+    function updateLanguage() {
+        const t = translations[currentLang];
+        
+        // Update header
+        document.querySelector('.header h1').textContent = t.title;
+        document.querySelector('.header p').textContent = t.subtitle;
+        
+        // Update back link
+        document.querySelector('.back-link').textContent = t.backLink;
+        
+        // Update section titles - find the text directly
+        const sectionTitles = document.querySelectorAll('.section-title');
+        sectionTitles.forEach((title, index) => {
+            const titleText = title.textContent.trim();
+            if (titleText.includes('Passion') || titleText.includes('Đam Mê')) {
+                title.textContent = '';
+                title.innerHTML = '<div style="display: inline-block; width: 4px; height: 24px; background: linear-gradient(135deg, #ff6b35 0%, #d4145a 100%); border-radius: 2px; margin-right: 10px; vertical-align: middle;"></div>' + t.passionTitle;
+            } else if (titleText.includes('Dragon') || titleText.includes('Bộ Lạc')) {
+                title.textContent = '';
+                title.innerHTML = '<div style="display: inline-block; width: 4px; height: 24px; background: linear-gradient(135deg, #ff6b35 0%, #d4145a 100%); border-radius: 2px; margin-right: 10px; vertical-align: middle;"></div>' + t.tribesTitle;
+            }
+        });
+        
+        // Update passion text
+        document.querySelector('.wings-content p').textContent = t.passionText;
+        
+        // Update dragon cards
+        const dragonCards = document.querySelectorAll('.dragon-card');
+        const tribes = [
+            {title: t.seawings, text: t.seawingsText},
+            {title: t.skywings, text: t.skywingsText},
+            {title: t.sandwings, text: t.sandwingsText},
+            {title: t.rainwings, text: t.rainwingsText},
+            {title: t.icewings, text: t.icewingsText},
+            {title: t.nightwings, text: t.nightwingsText},
+            {title: t.mudwings, text: t.mudwingsText},
+            {title: t.leafwings, text: t.leafwingsText},
+            {title: t.beetlewings, text: t.beetlewingsText},
+            {title: t.silkwings, text: t.silkwingsText},
+            {title: t.wildwings, text: t.wildwingsText},
+            {title: t.sharptails, text: t.sharptailsText},
+            {title: t.hivewings, text: t.hivewingsText}
+        ];
+        
+        dragonCards.forEach((card, index) => {
+            card.querySelector('h3').innerHTML = tribes[index].title;
+            card.querySelector('p').textContent = tribes[index].text;
+        });
+        
+        // Update copyright
+        document.querySelector('.footer p').textContent = t.copyright;
+    }
+</script>
 </html>

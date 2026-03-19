@@ -390,9 +390,79 @@
                 opacity: 0.6;
             }
         }
+
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .lever {
+            width: 70px;
+            height: 40px;
+            background: linear-gradient(135deg, #87ceeb 0%, #001a4d 100%);
+            border-radius: 20px;
+            position: relative;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .lever:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .lever-toggle {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 32px;
+            height: 32px;
+            background: white;
+            border-radius: 50%;
+            transition: left 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #001a4d;
+        }
+
+        .lever.vietnamese .lever-toggle {
+            left: 36px;
+        }
+
+        .lever-label {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 11px;
+            font-weight: bold;
+            color: white;
+            width: 100%;
+            text-align: center;
+        }
+
+        .lever-label.en {
+            left: 8px;
+        }
+
+        .lever-label.vi {
+            right: 8px;
+        }
     </style>
 </head>
 <body>
+    <div class="language-switcher">
+        <div class="lever" id="languageLever">
+            <div class="lever-toggle">EN</div>
+            <span class="lever-label en">EN</span>
+            <span class="lever-label vi">VI</span>
+        </div>
+    </div>
     <div class="container">
         <div class="header">
             <div class="star-icon">⭐</div>
@@ -461,4 +531,98 @@
         </div>
     </div>
 </body>
+<script>
+    const translations = {
+        en: {
+            name: "Kevin Nguyen",
+            tagline: "Developer | Gamer | Athlete | Reader",
+            aboutTitle: "About Me",
+            aboutText: "Hi! I'm Kevin Nguyen, a passionate developer and enthusiast. I love diving into Python and mathematics, playing competitive games like Bloxd.io and Geometry Dash, and dominating the pickleball court. When I'm not coding or gaming, I'm lost in the worlds of manga—especially Doraemon and Wings of Fire. I believe in balancing technical pursuits with creative and athletic interests.",
+            interestsTitle: "My Interests",
+            exploreTitle: "Explore More",
+            pythonName: "Python",
+            mathName: "Mathematics",
+            gamesName: "Video Games",
+            pickleballName: "Pickleball",
+            mangaName: "Manga & Comics",
+            creativityName: "Creativity",
+            wingsName: "Wings of Fire",
+            pickleballLink: "Pickleball",
+            playBloxd: "Play Bloxd.io",
+            copyright: "© 2026 Kevin Nguyen. All rights reserved."
+        },
+        vi: {
+            name: "Kevin Nguyễn",
+            tagline: "Nhà Phát Triển | Game thủ | Vận Động Viên | Độc Giả",
+            aboutTitle: "Về Tôi",
+            aboutText: "Xin chào! Tôi là Kevin Nguyễn, một nhà phát triển và người đam mê nhiều lĩnh vực. Tôi yêu thích lập trình Python và toán học, chơi các trò chơi cạnh tranh như Bloxd.io và Geometry Dash, và chiếm lĩnh sân pickleball. Khi không lập trình hay chơi game, tôi bị mê hoặc bởi thế giới manga—đặc biệt là Doraemon và Wings of Fire. Tôi tin vào sự cân bằng giữa công nghệ và sáng tạo.",
+            interestsTitle: "Sở Thích Của Tôi",
+            exploreTitle: "Khám Phá Thêm",
+            pythonName: "Lập trình Python",
+            mathName: "Toán Học",
+            gamesName: "Trò Chơi Điện Tử",
+            pickleballName: "Pickleball",
+            mangaName: "Manga & Truyện Tranh",
+            creativityName: "Sáng Tạo",
+            wingsName: "Đôi cánh lửa",
+            pickleballLink: "Pickleball",
+            playBloxd: "Chơi Bloxd.io",
+            copyright: "© 2026 Kevin Nguyễn. Bảo lưu mọi quyền."
+        }
+    };
+
+    let currentLang = 'en';
+    const lever = document.getElementById('languageLever');
+
+    lever.addEventListener('click', function() {
+        currentLang = currentLang === 'en' ? 'vi' : 'en';
+        lever.classList.toggle('vietnamese');
+        updateLanguage();
+    });
+
+    function updateLanguage() {
+        const t = translations[currentLang];
+        
+        // Update header
+        document.querySelector('.header h1').textContent = t.name;
+        document.querySelector('.header p').textContent = t.tagline;
+        
+        // Update section titles
+        const sectionTitles = document.querySelectorAll('.section-title');
+        sectionTitles.forEach((title, index) => {
+            const titleText = title.textContent.trim();
+            if (titleText.includes('About') || titleText.includes('Về')) {
+                title.textContent = '';
+                title.innerHTML = '<div style="display: inline-block; width: 4px; height: 24px; background: linear-gradient(135deg, #87ceeb 0%, #001a4d 100%); border-radius: 2px; margin-right: 10px; vertical-align: middle;"></div>' + t.aboutTitle;
+            } else if (titleText.includes('Interests') || titleText.includes('Sở Thích')) {
+                title.textContent = '';
+                title.innerHTML = '<div style="display: inline-block; width: 4px; height: 24px; background: linear-gradient(135deg, #87ceeb 0%, #001a4d 100%); border-radius: 2px; margin-right: 10px; vertical-align: middle;"></div>' + t.interestsTitle;
+            } else if (titleText.includes('Explore') || titleText.includes('Khám')) {
+                title.textContent = '';
+                title.innerHTML = '<div style="display: inline-block; width: 4px; height: 24px; background: linear-gradient(135deg, #87ceeb 0%, #001a4d 100%); border-radius: 2px; margin-right: 10px; vertical-align: middle;"></div>' + t.exploreTitle;
+            }
+        });
+        
+        // Update about text
+        document.querySelector('.bio').textContent = t.aboutText;
+        
+        // Update interest cards
+        const interestNames = document.querySelectorAll('.interest-name');
+        interestNames[0].textContent = t.pythonName;
+        interestNames[1].textContent = t.mathName;
+        interestNames[2].textContent = t.gamesName;
+        interestNames[3].textContent = t.pickleballName;
+        interestNames[4].textContent = t.mangaName;
+        interestNames[5].textContent = t.creativityName;
+        
+        // Update explore cards
+        const exploreNames = document.querySelectorAll('.explore-name');
+        exploreNames[0].textContent = t.wingsName;
+        exploreNames[1].textContent = t.pickleballLink;
+        
+        // Update button and copyright
+        document.querySelector('.links-section a').textContent = t.playBloxd;
+        document.querySelector('.footer p').innerHTML = t.copyright;
+    }
+</script>
 </html>

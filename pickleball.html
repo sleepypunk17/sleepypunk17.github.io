@@ -224,6 +224,69 @@
             transform: translateY(-2px);
         }
 
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .lever {
+            width: 70px;
+            height: 40px;
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+            border-radius: 20px;
+            position: relative;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .lever:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .lever-toggle {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 32px;
+            height: 32px;
+            background: white;
+            border-radius: 50%;
+            transition: left 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #0083b0;
+        }
+
+        .lever.vietnamese .lever-toggle {
+            left: 36px;
+        }
+
+        .lever-label {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 11px;
+            font-weight: bold;
+            color: white;
+            width: 100%;
+            text-align: center;
+        }
+
+        .lever-label.en {
+            left: 8px;
+        }
+
+        .lever-label.vi {
+            right: 8px;
+        }
+
         @media (max-width: 600px) {
             .header h1 {
                 font-size: 2em;
@@ -244,6 +307,13 @@
     </style>
 </head>
 <body>
+    <div class="language-switcher">
+        <div class="lever" id="languageLever">
+            <div class="lever-toggle">EN</div>
+            <span class="lever-label en">EN</span>
+            <span class="lever-label vi">VI</span>
+        </div>
+    </div>
     <div class="container">
         <div class="header">
             <h1>Pickleball 🏓</h1>
@@ -302,4 +372,122 @@
         </div>
     </div>
 </body>
+<script>
+    const translations = {
+        en: {
+            title: "Pickleball 🏓",
+            subtitle: "The Sport I Love",
+            backLink: "← Back to Home",
+            passionTitle: "My Passion for Pickleball",
+            passionText: "Beyond the screen, I'm passionate about pickleball. The fast-paced rallies, strategic placement, and competitive spirit of the game keep me engaged. Whether playing casually with friends or pushing for competitive play, pickleball offers the perfect balance of athleticism, strategy, and fun. It's my way of staying active and connecting with others who share the passion for this rapidly growing sport.",
+            skillsTitle: "Key Skills",
+            placementTitle: "🎯 Placement",
+            placementText: "Strategic shot placement to control the court and force errors from opponents.",
+            speedTitle: "⚡ Speed",
+            speedText: "Quick court movement and fast reflexes for aggressive play.",
+            defenseTitle: "🛡️ Defense",
+            defenseText: "Solid defensive strategies and court positioning to neutralize attacks.",
+            serveTitle: "🔥 Serve",
+            serveText: "Consistent, powerful serves to gain the advantage at the start of rallies.",
+            whyTitle: "Why I Love Pickleball",
+            whyItems: [
+                "<strong>Lower impact:</strong> Easier on joints compared to tennis while still highly competitive",
+                "<strong>Community:</strong> Welcoming and friendly player community at all skill levels",
+                "<strong>Quick learning curve:</strong> Fun to learn but has incredible depth for competitive play",
+                "<strong>Social:</strong> Perfect doubles game for team play and building friendships",
+                "<strong>Accessibility:</strong> Smaller court makes it fun and less intimidating for beginners",
+                "<strong>Growing sport:</strong> One of the fastest-growing sports with tournaments worldwide"
+            ],
+            copyright: "© 2026 Kevin Nguyen. All rights reserved."
+        },
+        vi: {
+            title: "Pickleball 🏓",
+            subtitle: "Môn Thể Thao Tôi Yêu Thích",
+            backLink: "← Quay Lại Trang Chủ",
+            passionTitle: "Niềm Đam Mê Pickleball Của Tôi",
+            passionText: "Ngoài máy tính, tôi yêu thích chơi pickleball. Các cuộc thi đấu nhanh, vị trí chiến lược, và tinh thần cạnh tranh của trò chơi giữ tôi hứng thú. Dù chơi nhân với bạn bè hay cố gắng chơi cạnh tranh, pickleball mang lại sự cân bằng hoàn hảo giữa thể thao, chiến lược và vui vẻ. Đó là cách tôi giữ khoẻ và kết nối với những người khác cùng yêu thích môn thể thao đang phát triển nhanh này.",
+            skillsTitle: "Các Kỹ Năng Chính",
+            placementTitle: "🎯 Đặt Vị Trí",
+            placementText: "Đặt bóng chiến lược để kiểm soát sân và gây lỗi cho đối thủ.",
+            speedTitle: "⚡ Tốc Độ",
+            speedText: "Chuyển động sân nhanh chóng và phản xạ nhanh cho trò chơi tấn công.",
+            defenseTitle: "🛡️ Phòng Thủ",
+            defenseText: "Chiến lược phòng thủ vững chắc và vị trí sân để trung hòa các cuộc tấn công.",
+            serveTitle: "🔥 Giao Bóng",
+            serveText: "Giao bóng ổn định, mạnh mẽ để giành lợi thế ở đầu cuộc thi.",
+            whyTitle: "Tại Sao Tôi Yêu Thích Pickleball",
+            whyItems: [
+                "<strong>Ít tác động:</strong> Dễ hơn cho khớp so với tennis nhưng vẫn cạnh tranh cao",
+                "<strong>Cộng đồng:</strong> Cộng đồng người chơi thân thiện ở tất cả các mức độ kỹ năng",
+                "<strong>Đường cong học tập nhanh:</strong> Vui để học nhưng có độ sâu khiến nó cạnh tranh",
+                "<strong>Xã hội:</strong> Trò chơi đôi hoàn hảo để chơi nhóm và xây dựng tình bạn",
+                "<strong>Khả năng tiếp cận:</strong> Sân nhỏ hơn làm cho nó vui vẻ và ít đáng sợ cho người mới",
+                "<strong>Môn thể thao đang phát triển:</strong> Một trong những môn thể thao phát triển nhanh nhất với các giải đấu toàn thế giới"
+            ],
+            copyright: "© 2026 Kevin Nguyễn. Bảo lưu mọi quyền."
+        }
+    };
+
+    let currentLang = 'en';
+    const lever = document.getElementById('languageLever');
+
+    lever.addEventListener('click', function() {
+        currentLang = currentLang === 'en' ? 'vi' : 'en';
+        lever.classList.toggle('vietnamese');
+        updateLanguage();
+    });
+
+    function updateLanguage() {
+        const t = translations[currentLang];
+        
+        // Update header
+        document.querySelector('.header h1').textContent = t.title;
+        document.querySelector('.header p').textContent = t.subtitle;
+        
+        // Update back link
+        document.querySelector('.back-link').textContent = t.backLink;
+        
+        // Update section titles - find the text directly
+        const sectionTitles = document.querySelectorAll('.section-title');
+        sectionTitles.forEach((title, index) => {
+            const titleText = title.textContent.trim();
+            if (titleText.includes('Passion') || titleText.includes('Niềm')) {
+                title.textContent = '';
+                title.innerHTML = '<div style="display: inline-block; width: 4px; height: 24px; background: linear-gradient(135deg, #00b4db 0%, #ffd700 100%); border-radius: 2px; margin-right: 10px; vertical-align: middle;"></div>' + t.passionTitle;
+            } else if (titleText.includes('Skill') || titleText.includes('Kỹ Năng')) {
+                title.textContent = '';
+                title.innerHTML = '<div style="display: inline-block; width: 4px; height: 24px; background: linear-gradient(135deg, #00b4db 0%, #ffd700 100%); border-radius: 2px; margin-right: 10px; vertical-align: middle;"></div>' + t.skillsTitle;
+            } else if (titleText.includes('Why') || titleText.includes('Tại Sao')) {
+                title.textContent = '';
+                title.innerHTML = '<div style="display: inline-block; width: 4px; height: 24px; background: linear-gradient(135deg, #00b4db 0%, #ffd700 100%); border-radius: 2px; margin-right: 10px; vertical-align: middle;"></div>' + t.whyTitle;
+            }
+        });
+        
+        // Update passion text
+        document.querySelector('.pickleball-content p').textContent = t.passionText;
+        
+        // Update skill cards
+        const skillCards = document.querySelectorAll('.skill-card');
+        skillCards[0].querySelector('h3').innerHTML = t.placementTitle;
+        skillCards[0].querySelector('p').textContent = t.placementText;
+        skillCards[1].querySelector('h3').innerHTML = t.speedTitle;
+        skillCards[1].querySelector('p').textContent = t.speedText;
+        skillCards[2].querySelector('h3').innerHTML = t.defenseTitle;
+        skillCards[2].querySelector('p').textContent = t.defenseText;
+        skillCards[3].querySelector('h3').innerHTML = t.serveTitle;
+        skillCards[3].querySelector('p').textContent = t.serveText;
+        
+        // Update why list
+        const whyList = document.querySelector('.tips-list ul');
+        whyList.innerHTML = '';
+        t.whyItems.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = item;
+            whyList.appendChild(li);
+        });
+        
+        // Update copyright
+        document.querySelector('.footer p').textContent = t.copyright;
+    }
+</script>
 </html>
