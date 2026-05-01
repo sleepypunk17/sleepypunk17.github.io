@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - Kevin Nguyen</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>⭐</text></svg>">
+    <link rel="stylesheet" href="games.css">
+</head>
+<body>
+    <div class="language-switcher">
+        <div class="lever" id="languageLever">
+            <div class="lever-toggle">🇺🇸</div>
+            <span class="lever-label en">🇺🇸</span>
+            <span class="lever-label vi">🇻🇳</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Games 🎮</h1>
+            <p>My Gaming Passion</p>
+        </div>
+
+        <div class="content">
+            <a href="index.html" class="back-link">← Back to Home</a>
+
+            <div class="section">
+                <div class="section-title">My Gaming Journey</div>
+                <div class="games-intro">
+                    <p>Gaming is one of my biggest passions. From competitive multiplayer battles to creative building experiences, games have shaped my problem-solving skills and reflexes. Each game I play offers unique challenges and fun, from fast-paced action to strategic gameplay. I love the competitive spirit, community, and endless possibilities that gaming provides.</p>
+                </div>
+            </div>
+
+            <div class="section games-section">
+                <div class="section-title">Featured Games</div>
+                <div class="games-grid">
+                    <a href="bloxd.html" class="game-card">
+                        <h3>🎮 Bloxd.io</h3>
+                        <p>Fast-paced competitive game combining action with strategic gameplay. Multiple game modes including Survival, Player-Made Games, and Creative building.</p>
+                        <span class="game-tag">Competitive</span>
+                    </a>
+                    <div class="game-card coming-soon">
+                        <h3>🚀 Geometry Dash</h3>
+                        <p>Rhythm-based platformer requiring precision timing and reflexes. Challenging levels test your skills with every jump and tap.</p>
+                        <span class="game-tag">Platformer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section why-section">
+                <div class="section-title">Why I Love Gaming</div>
+                <div class="why-list">
+                    <ul>
+                        <li><strong>Competitive Challenge:</strong> Testing skills against other players and pushing my limits</li>
+                        <li><strong>Quick Reflexes:</strong> Games develop fast reaction times and strategic thinking</li>
+                        <li><strong>Creative Expression:</strong> Building modes allow unlimited creative freedom</li>
+                        <li><strong>Community:</strong> Connecting with fellow gamers worldwide</li>
+                        <li><strong>Stress Relief:</strong> Engaging gameplay provides perfect escapism</li>
+                        <li><strong>Skill Development:</strong> Continuous improvement and mastering game mechanics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Kevin Nguyen. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+<script>
+    const translations = {
+        en: {
+            title: "Games 🎮",
+            subtitle: "My Gaming Passion",
+            backLink: "← Back to Home",
+            journeyTitle: "My Gaming Journey",
+            journeyText: "Gaming is one of my biggest passions. From competitive multiplayer battles to creative building experiences, games have shaped my problem-solving skills and reflexes. Each game I play offers unique challenges and fun, from fast-paced action to strategic gameplay. I love the competitive spirit, community, and endless possibilities that gaming provides.",
+            gamesTitle: "Featured Games",
+            bloxdTitle: "🎮 Bloxd.io",
+            bloxdText: "Fast-paced competitive game combining action with strategic gameplay. Multiple game modes including Survival, Player-Made Games, and Creative building.",
+            geometryTitle: "🚀 Geometry Dash",
+            geometryText: "Rhythm-based platformer requiring precision timing and reflexes. Challenging levels test your skills with every jump and tap.",
+            competitiveTag: "Competitive",
+            comingSoonTag: "Platformer",
+            whyTitle: "Why I Love Gaming",
+            whyItems: [
+                "<strong>Competitive Challenge:</strong> Testing skills against other players and pushing my limits",
+                "<strong>Quick Reflexes:</strong> Games develop fast reaction times and strategic thinking",
+                "<strong>Creative Expression:</strong> Building modes allow unlimited creative freedom",
+                "<strong>Community:</strong> Connecting with fellow gamers worldwide",
+                "<strong>Stress Relief:</strong> Engaging gameplay provides perfect escapism",
+                "<strong>Skill Development:</strong> Continuous improvement and mastering game mechanics"
+            ],
+            copyright: "© 2026 Kevin Nguyen. All rights reserved."
+        },
+        vi: {
+            title: "Trò Chơi 🎮",
+            subtitle: "Niềm Đam Mê Chơi Game Của Tôi",
+            backLink: "← Quay lại Trang Chủ",
+            journeyTitle: "Hành Trình Chơi Game Của Tôi",
+            journeyText: "Chơi game là một trong những niềm đam mê lớn nhất của tôi. Từ các trận chiến multiplayer cạnh tranh đến những trải nghiệm xây dựng sáng tạo, các trò chơi đã định hình kỹ năng giải quyết vấn đề và phản xạ của tôi. Mỗi trò chơi tôi chơi đều mang lại những thách thức độc đáo và vui vẻ, từ hành động nhanh chóng đến gameplay chiến lược. Tôi yêu thích tinh thần cạnh tranh, cộng đồng và những khả năng vô tận mà chơi game cung cấp.",
+            gamesTitle: "Trò Chơi Nổi Bật",
+            bloxdTitle: "🎮 Bloxd.io",
+            bloxdText: "Một tựa game cạnh tranh có nhịp độ nhanh, kết hợp giữa yếu tố hành động và lối chơi chiến thuật. Trò chơi sở hữu nhiều chế độ đa dạng, bao gồm Sinh tồn, Các trò chơi do người chơi tạo và Xây dựng sáng tạo.",
+            geometryTitle: "🚀 Geometry Dash",
+            geometryText: "Tựa game platformer theo nhịp điệu, đòi hỏi sự căn chỉnh thời gian và phản xạ chính xác. Những màn chơi đầy thử thách sẽ kiểm nghiệm kỹ năng của bạn qua từng cú nhảy và chạm.",
+            competitiveTag: "Cạnh Tranh",
+            comingSoonTag: "Game đi cảnh",
+            whyTitle: "Tại Sao Tôi Yêu Chơi Game",
+            whyItems: [
+                "<strong>Thách Thức Cạnh Tranh:</strong> Kiểm tra kỹ năng với những người chơi khác và vượt qua giới hạn",
+                "<strong>Phản Xạ Nhanh:</strong> Các trò chơi phát triển thời gian phản ứng nhanh và tư duy chiến lược",
+                "<strong>Thể Hiện Sáng Tạo:</strong> Các chế độ xây dựng cho phép sáng tạo không giới hạn",
+                "<strong>Cộng Đồng:</strong> Kết nối với những gamer trên toàn thế giới",
+                "<strong>Giải Tỏa Căng Thẳng:</strong> Gameplay hấp dẫn mang lại sự thoát ly hoàn hảo",
+                "<strong>Phát Triển Kỹ Năng:</strong> Cải thiện liên tục và thành thạo cơ chế trò chơi"
+            ],
+            copyright: "© 2026 Kevin Nguyễn. Bảo lưu mọi quyền."
+        }
+    };
+
+    let currentLang = 'en';
+    const lever = document.getElementById('languageLever');
+
+    lever.addEventListener('click', function() {
+        currentLang = currentLang === 'en' ? 'vi' : 'en';
+        lever.classList.toggle('vietnamese');
+        updateLanguage();
+    });
+
+    function updateLanguage() {
+        const t = translations[currentLang];
+        
+        // Update header
+        document.querySelector('.header h1').textContent = t.title;
+        document.querySelector('.header p').textContent = t.subtitle;
+        
+        // Update back link
+        document.querySelector('.back-link').textContent = t.backLink;
+        
+        // Update section titles
+        const sectionTitles = document.querySelectorAll('.section-title');
+        sectionTitles.forEach((title) => {
+            const titleText = title.textContent.trim();
+            if (titleText.includes('Journey') || titleText.includes('Hành Trình')) {
+                title.textContent = t.journeyTitle;
+            } else if (titleText.includes('Featured') || titleText.includes('Nổi Bật')) {
+                title.textContent = t.gamesTitle;
+            } else if (titleText.includes('Why') || titleText.includes('Tại Sao')) {
+                title.textContent = t.whyTitle;
+            }
+        });
+        
+        // Update journey text
+        document.querySelector('.games-intro p').textContent = t.journeyText;
+        
+        // Update game cards
+        const gameCards = document.querySelectorAll('.game-card');
+        gameCards[0].querySelector('h3').textContent = t.bloxdTitle;
+        gameCards[0].querySelector('p').textContent = t.bloxdText;
+        gameCards[0].querySelector('.game-tag').textContent = t.competitiveTag;
+        gameCards[1].querySelector('h3').textContent = t.geometryTitle;
+        gameCards[1].querySelector('p').textContent = t.geometryText;
+        gameCards[1].querySelector('.game-tag').textContent = t.comingSoonTag;
+        
+        // Update reasons list
+        const whyItems = document.querySelectorAll('.why-list li');
+        whyItems.forEach((item, index) => {
+            item.innerHTML = t.whyItems[index];
+        });
+        
+        // Update copyright
+        document.querySelector('.footer p').innerHTML = t.copyright;
+    }
+</script>
+</html>
