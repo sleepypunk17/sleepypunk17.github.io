@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch - Kevin Nguyen</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>⭐</text></svg>">
+    <link rel="stylesheet" href="scratch.css">
+</head>
+<body>
+    <div class="language-switcher">
+        <div class="lever" id="languageLever">
+            <div class="lever-toggle">🇺🇸</div>
+            <span class="lever-label en">🇺🇸</span>
+            <span class="lever-label vi">🇻🇳</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Scratch 🧩</h1>
+            <p>My creative project</p>
+        </div>
+
+        <div class="content">
+            <a href="index.html" class="back-link">← Back to Home</a>
+
+            <div class="section">
+                <div class="section-title">My Scratch Project</div>
+                <div class="project-box">
+                    <p>Here is my Scratch project:</p>
+                    <a href="https://scratch.mit.edu/projects/1387589559/" target="_blank" rel="noopener" class="project-link">Open my Scratch project</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Kevin Nguyen. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+<script>
+    const translations = {
+        en: {
+            title: "Scratch 🧩",
+            subtitle: "My creative project",
+            backLink: "← Back to Home",
+            projectTitle: "My Scratch Project",
+            introText: "Here is my Scratch project:",
+            buttonText: "Open my Scratch project",
+            copyright: "© 2026 Kevin Nguyen. All rights reserved."
+        },
+        vi: {
+            title: "Scratch 🧩",
+            subtitle: "Dự án sáng tạo của tôi",
+            backLink: "← Quay lại Trang Chủ",
+            projectTitle: "Dự Án Scratch Của Tôi",
+            introText: "Đây là dự án Scratch của tôi:",
+            buttonText: "Mở dự án Scratch của tôi",
+            copyright: "© 2026 Kevin Nguyễn. Bảo lưu mọi quyền."
+        }
+    };
+
+    let currentLang = 'en';
+    const lever = document.getElementById('languageLever');
+
+    lever.addEventListener('click', function() {
+        currentLang = currentLang === 'en' ? 'vi' : 'en';
+        lever.classList.toggle('vietnamese');
+        updateLanguage();
+    });
+
+    function updateLanguage() {
+        const t = translations[currentLang];
+        document.querySelector('.header h1').textContent = t.title;
+        document.querySelector('.header p').textContent = t.subtitle;
+        document.querySelector('.back-link').textContent = t.backLink;
+        document.querySelector('.section-title').textContent = t.projectTitle;
+        document.querySelector('.project-box p').textContent = t.introText;
+        document.querySelector('.project-link').textContent = t.buttonText;
+        document.querySelector('.footer p').innerHTML = t.copyright;
+    }
+</script>
+</html>
